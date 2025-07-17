@@ -9,3 +9,4 @@ psycopg2-binary
 qrcode
 reportlab
 pandas 
+user-agents
