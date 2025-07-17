@@ -1,1 +1,1 @@
-web: gunicorn Ferremas.wsgi
+web: gunicorn Agenda.wsgi
