@@ -17,7 +17,7 @@ from user_agents import parse
 # Create your views here.
 
 #produccion
-host =https://agenda-zuyf.onrender.com/
+host ='https://agenda-zuyf.onrender.com/'
 #desarrollo
 #host = 'http://127.0.0.1:8000/'
 
