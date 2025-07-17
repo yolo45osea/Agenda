@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Maestranzas Unidos S.A</title>
+    {% load static %}
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}"/>
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    </head>
+
+<!-------------------------------------------------- Respónsivo General----------------------------------------------------------------------------------->
+
+    <style>
+  @media (max-width: 991px) {
+    #main-header > div {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+    #main-header nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    #main-header nav ul li a {
+      font-size: 16px !important;
+    }
+    .slideshow-text h1 {
+      font-size: 2rem;
+    }
+    .slideshow-text p {
+      font-size: 1rem;
+    }
+    .slideshow-text a {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .eficiencia-section,
+    .services-section,
+    footer > div,
+    .card-contacto {
+      flex-direction: column !important;
+      padding: 20px !important;
+    }
+    .service-box,
+    .eficiencia-text,
+    .eficiencia-images,
+    .datos {
+      width: 100% !important;
+    }
+    .slideshow-text {
+      padding-left: 20px;
+    }
+    .modal-dialog {
+      margin: 1.75rem auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slideshow-text h1 {
+      font-size: 1.5rem;
+    }
+    .slideshow-text h5 {
+      font-size: 0.8rem;
+    }
+    .slideshow-text p {
+      font-size: 0.9rem;
+    }
+    .modal-content {
+      padding: 20px !important;
+    }
+    .modal-body h5 {
+      font-size: 18px !important;
+    }
+    .form-group label,
+    .form-control,
+    .btn {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+<!-------------------------------------------------- Inicio Body------------------------------------------------------------------------------------>
+	<body>
+		<header>
+			<div id="top-header">
+				<div class="container">
+					<!--<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i>+56 52 234 5678</a></li
+						<li><a href="https://mail.google.com/mail/?view=cm&to=contacto@maestranzasunidos.cl" target="_blank"><i class="fa fa-envelope-o"></i>contacto@maestranzasunidos.cl</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i>Av. Industrial Norte 4560, Copiapó, Región de Atacama, Chile</a></li>
+					</ul>-->
+					{% if user.is_authenticated %}
+            <ul class="header-links pull-right">
+              <li><a href="{% url 'organizador' %}"><i class="fa fa-user-o"></i>Mi cuenta</a></li>
+            </ul>
+          {% else %}
+            <ul class="header-links pull-right">
+              <li><a href="#" id="botonlogin" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-o"></i>Mi cuenta</a></li>
+            </ul>
+          {% endif %}
+				</div>
+			</div>
+
+<!-------------------------------------------------- Barra Header------------------------------------------------------------------------------------>
+
+<div id="main-header" style="background-color: white; border-bottom: 1px solid #ccc;">
+  <div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 90px;
+    padding-right: 90px;
+  ">
+
+    <a href="{% url 'index' %}" class="logo" style="display: flex; align-items: center;">
+      <img src="{% static 'img/logo1.png' %}" alt="Logo" style="max-height: 90px;">
+    </a>
+
+
+    <nav style="margin-left: auto;">
+      <ul style="
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      ">
+        <li><a href="{% url 'nosotros' %}" style="text-decoration: none; color: black; font-weight: bold; font-size: 15px;">ACERCA DE NOSOTROS</a></li>
+        <li><a href="{% url 'servicio' %}" style="text-decoration: none; color: black; font-weight: bold; font-size: 15px;">SERVICIOS</a></li>
+        <li><a href="{% url 'mecanicos' %}" style="text-decoration: none; color: black; font-weight: bold; font-size: 15px;">MECÁNICOS</a></li>
+        <li><a href="{% url 'contacto' %}" style="text-decoration: none; color: black; font-weight: bold; font-size: 15px;">CONTACTO</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!----------------------------------------------------- Carrusel ------------------------------------------------------------------------------------->
+
+	
+
+ 
+</header>
+
+<!-------------------------------------------------- Card Servicios------------------------------------------------------------------------------------>
+
+
+<!----------------------------------------------------- Card Eficiencia------------------------------------------------------------------------------------>
+
+
+
+<!-------------------------------------------------------- Card Calidad------------------------------------------------------------------------------------->	
+
+
+
+<!-------------------------------------------------- Card Contacto------------------------------------------------------------------------------------>
+
+
+<!-------------------------------------------------------- Footer-------------------------------------------------------------------------------------->
+
+
+
+<!-------------------------------------------------------- Footer 2---------------------------------------------------------------------------------------->
+
+			
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/slick.min.js' %}"></script>
+		<script src="{% static 'js/nouislider.min.js' %}"></script>
+		<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<script>
+			const slides = document.querySelectorAll(".slide");
+			let current = 0;
+			setInterval(() => {
+				slides[current].classList.remove("active");
+				current = (current + 1) % slides.length;
+				slides[current].classList.add("active");
+			}, 5000);
+		</script>
+
+<!------------------------------------------------------------Modal inicio de Sesión------------------------------------------------------------------------->
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #15161d; color: white; border-radius: 10px; padding: 30px; border: none;">
+      <div class="modal-header justify-content-center border-0">
+        <img src="{% static 'img/logo3.png' %}" alt="Logo Maestranzas Unidos" style="max-height: 100px;">
+      </div>
+      <div class="modal-body">
+        <h5 class="text-center font-weight-bold mb-4" style="font-size: 22px; color: white;">Iniciar Sesión</h5>
+        {% if mensaje %}
+          <div style="color: red; font-size: large;"> {{ mensaje }}</div>
+        {% endif %}
+        <form method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username" style="font-size: 16px;">Usuario</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su usuario"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div>
+          <div class="form-group">
+            <label for="password" style="font-size: 16px;">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div><br>
+          <button type="submit" name="login_form" class="btn btn-block mt-3"
+            style="background-color: #d00; color: white; font-weight: bold; font-size: 14px; height: 40px;">
+            Entrar
+          </button>
+        </form>
+        <div class="text-center mt-2">
+                  <span class="small text-muted " style="font-size: 16px;">¿No tienes cuenta? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Regístrate</a></span>
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #15161d; color: white; border-radius: 10px; padding: 30px; border: none;">
+      <div class="modal-header justify-content-center border-0">
+        <img src="{% static 'img/logo3.png' %}" alt="Logo Maestranzas Unidos" style="max-height: 100px;">
+      </div>
+      <div class="modal-body">
+        <h5 class="text-center font-weight-bold mb-4" style="font-size: 22px; color: white;">Registrate</h5>
+        {% if mensaje %}
+          <div style="color: red; font-size: large;"> {{ mensaje }}</div>
+        {% endif %}
+        <form method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username" style="font-size: 16px;">Usuario</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su usuario"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div>
+          <div class="form-group">
+            <label for="password" style="font-size: 16px;">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div>
+          <div class="form-group">
+            <label for="password" style="font-size: 16px;">Contraseña</label>
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Ingrese su contraseña"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div>
+          <div class="form-group">
+            <label for="password" style="font-size: 16px;">Contraseña</label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Ingrese su contraseña"
+              style="background-color: #222; color: white; border: 1px solid #555; font-size: 14px; height: 40px;">
+          </div><br>
+          <button type="submit" name="registro_form" class="btn btn-block mt-3"
+            style="background-color: #d00; color: white; font-weight: bold; font-size: 14px; height: 40px;">
+            Registrarse
+          </button>
+        </form>
+        <div class="text-center mt-2">
+                  <span class="small text-muted " style="font-size: 16px;">Ya tienes cuenta? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Inicia Sesión Aqui</a></span>
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#loginModal').on('hidden.bs.modal', function () {
+    $('body').css('padding-right', '0');
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('next')) {
+      console.log("Abriendo modal porque se detectó ?next");
+      document.getElementById("botonlogin").click();
+      $('#loginModal').modal('show');
+    }
+  });
+</script>
+
+<script>
+  const imagesContainer = document.getElementById('carousel-images');
+  const imagesCount = imagesContainer.children.length;
+  let currentIndex = 0;
+
+  // Función para actualizar el carrusel según ancho actual
+  function updateCarousel() {
+    const carouselWidth = imagesContainer.clientWidth; // ancho visible
+    imagesContainer.style.transform = `translateX(${-currentIndex * carouselWidth}px)`;
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imagesCount;
+    updateCarousel();
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + imagesCount) % imagesCount;
+    updateCarousel();
+  });
+
+  // Para que al cambiar tamaño ventana se reajuste
+  window.addEventListener('resize', updateCarousel);
+
+  // Inicializar posición
+  updateCarousel();
+</script>
+
+{% if login_form.errors %}
+   <script>
+    $(document).ready(function () {
+      console.log('hola mundo')
+      document.getElementById("botonlogin").click();
+      $('#loginModal').modal('show');
+      
+    });
+  </script>
+{% endif %}
+
+
+	</body>
+</html>

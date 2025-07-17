@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mecánicos - Eventos B.R</title>
+  {% load static %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #15161d;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-red {
+      background-color: #d00;
+      color: white;
+      font-weight: bold;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .btn-red:hover {
+      background-color: #a00;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      color: #15161d;
+    }
+
+    .team-section {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto 60px;
+      padding: 0 30px;
+    }
+
+    .team-card {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .team-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .team-card:hover .team-overlay {
+      opacity: 1;
+    }
+
+    .team-overlay h5 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .team-overlay p {
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #15161d;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    footer h5 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 1200px) {
+      .team-section {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h4 class="m-0 font-weight-bold">Eventos B.R - Mecánicos</h4>
+    <a href="{% url 'index' %}" class="btn-red">
+      <i class="fas fa-arrow-left mr-2"></i> Volver
+    </a>
+  </header>
+
+  <main class="container-fluid">
+    <h2 class="section-title">Nuestro Equipo de Mecánicos</h2>
+    <div class="team-section">
+      <div class="team-card">
+        <img src="{% static 'img/meca1.png' %}" alt="Mecánico 1">
+        <div class="team-overlay">
+          <h5>Pedro Morales</h5>
+          <p>Especialista en motores diesel y supervisor de mantenciones preventivas.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="{% static 'img/meca2.png' %}" alt="Mecánico 2">
+        <div class="team-overlay">
+          <h5>Andrés Romero</h5>
+          <p>Encargado de rectificado de cilindros y pruebas de presión en culatas.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="{% static 'img/meca3.png' %}" alt="Mecánico 3">
+        <div class="team-overlay">
+          <h5>Carlos Zúñiga</h5>
+          <p>Experto en montaje de motores completos y balanceo dinámico.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="{% static 'img/meca4.png' %}" alt="Mecánico 4">
+        <div class="team-overlay">
+          <h5>Pedro León</h5>
+          <p>Técnica en mantenimiento correctivo y ajuste de componentes críticos.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img src="{% static 'img/meca5.png' %}" alt="Mecánico 5">
+        <div class="team-overlay">
+          <h5>Felipe Cortés</h5>
+          <p>Responsable de alineación, torqueo y pruebas de rendimiento.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="{% static 'img/logo3.png' %}" alt="Logo" style="width: 220px;">
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>MENÚ</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
+            <li><a href="{% url 'servicio' %}">Servicios</a></li>
+            <li><a href="{% url 'mecanicos' %}">Mecanicos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>CONTACTO</h5>
+          <p><i class="fas fa-map-marker-alt" style="color: red;"></i> Av. Industrial Norte 4560, Copiapó</p>
+          <p><i class="fas fa-phone" style="color: red;"></i> +56 52 234 5678</p>
+          <p><i class="fas fa-envelope" style="color: red;"></i> contacto@maestranzasunidos.cl</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Maestranza y Rectificadora Unidos S.A. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Eventos B.R</title>
+  {% load static %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #15161d;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-red {
+      background-color: #d00;
+      color: white;
+      font-weight: bold;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .btn-red:hover {
+      background-color: #a00;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #15161d;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .contact-form {
+      flex: 1 1 48%;
+      background-color: #f5f7fa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-map {
+      flex: 1 1 48%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background-color: #15161d;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    footer h5 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h4 class="m-0 font-weight-bold">Eventos B.R - Contacto</h4>
+    <a href="{% url 'index' %}" class="btn-red">
+      <i class="fas fa-arrow-left mr-2"></i> Volver
+    </a>
+  </header>
+
+  <main>
+    <h2 class="contact-title">Contáctanos</h2>
+    <div class="contact-info">
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-red btn-block">Enviar Mensaje</button>
+        </form>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps?q=Rectificadora%20de%20Motores%20Carlos%20Alvarez&z=15&output=embed" width="100%" height="100%" frameborder="0" style="border:0; min-height: 400px;" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="{% static 'img/logo3.png' %}" alt="Logo" style="width: 220px;">
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>MENÚ</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
+            <li><a href="{% url 'servicio' %}">Servicios</a></li>
+            <li><a href="{% url 'mecanicos' %}">Mecanicos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>CONTACTO</h5>
+          <p><i class="fas fa-map-marker-alt" style="color: red;"></i> Av. Industrial Norte 4560, Copiapó</p>
+          <p><i class="fas fa-phone" style="color: red;"></i> +56 52 234 5678</p>
+          <p><i class="fas fa-envelope" style="color: red;"></i> contacto@maestranzasunidos.cl</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Maestranza y Rectificadora Unidos S.A. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

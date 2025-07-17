@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movimientos de Inventario - Eventos B.R</title>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #15161d;
+      color: white;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    .form-section {
+      background-color: #f5f7fa;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #15161d;
+    }
+
+    .btn-red {
+      background-color: #d00;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-red:hover {
+      background-color: #b00;
+    }
+
+    .inventory-table {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #d00;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #a00;
+    }
+  </style>
+</head>
+<body>
+
+<!-------------------------------------------------- Barra Header------------------------------------------------------------------------------------>
+
+<header>
+  <h4 style="margin: 0; font-weight: bold; font-size: 17px;">Eventos B.R - Movimientos de Inventario</h4>
+    <a href="{% url 'operador' %}"  class="btn btn-red"><i class="fas fa-arrow-left mr-1"></i> Volver</a>
+</header>
+
+<!-------------------------------------------------- Formulario------------------------------------------------------------------------------------>
+
+<div class="container">
+  <div class="form-section">
+    <h2 class="form-title">Registro de Movimiento</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="tipo">Tipo de movimiento</label>
+        <select class="form-control" name="tipo" required>
+          <option value="Entrada">Entrada</option>
+          <option>Salida</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pieza">Pieza</label>
+        <select class="form-control" name="pieza" required>
+          <option value="" disabled selected>Seleccione una pieza</option>
+          {% for pieza in inventario %}
+            <option value="{{ pieza.idpieza }}">{{ pieza.nombre }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" class="form-control" name="cantidad" min="1" required/>
+      </div>
+      <div class="form-group">
+        <label for="motivo">Motivo / Proyecto asociado</label>
+        <textarea class="form-control" name="motivo" rows="2" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" class="form-control" name="fecha" required/>
+      </div>
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" class="form-control" name="usuario" value="{{ usuario }}" placeholder="{{ usuario }}" readonly/>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-red">Registrar Movimiento</button>
+      </div>
+    </form>
+  </div>
+
+<!-------------------------------------------------- Historial------------------------------------------------------------------------------------>
+
+  <div class="inventory-table">
+    <h4 class="text-center mb-4 font-weight-bold">Historial de Movimientos</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Tipo</th>
+            <th>Pieza</th>
+            <th>Cantidad</th>
+            <th>Motivo / Proyecto</th>
+            <th>Fecha</th>
+            <th>Usuario</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for movimiento in movimientos %}
+          <tr>
+            <td>{{ movimiento.idmovimiento }}</td>
+            <td>{{ movimiento.tipo }}</td>
+            <td>{{ movimiento.pieza.nombre }}</td>
+            <td>{{ movimiento.cantidad }}</td>
+            <td>{{ movimiento.motivo }}</td>
+            <td>{{ movimiento.fecha }}</td>
+            <td>{{ movimiento.operador }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTopBtn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+<!------------------------------------------------------ Scripts------------------------------------------------------------------------------------->
+
+<script>
+  function volver() {
+    window.location.href = "operador.html";
+  }
+
+  window.onscroll = function () {
+    document.getElementById('scrollTopBtn').style.display = window.scrollY > 200 ? 'flex' : 'none';
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
