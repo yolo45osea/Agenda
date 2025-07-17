@@ -17,9 +17,9 @@ from user_agents import parse
 # Create your views here.
 
 #produccion
-#host =
+host =https://agenda-zuyf.onrender.com/
 #desarrollo
-host = 'http://127.0.0.1:8000/'
+#host = 'http://127.0.0.1:8000/'
 
 
 
@@ -177,7 +177,9 @@ def cerrar_sesion(request):
     return redirect('index')
 
 def sendmail(request):
-    user = request.user
-    ahora = datetime.now().strftime('%H:%M')
-    mail(request)
+    try:
+        mail(request)
+        return HttpResponse("Correo enviado correctamente.")
+    except Exception as e:
+        return HttpResponse(f"Error al enviar correo: {str(e)}", status=500)
         
