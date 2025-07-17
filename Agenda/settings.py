@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v9$&35)lb5(74f(r+qyi@7+qyck*kd_16i5w60vkple+1yv=&9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['agenda-zuyf.onrender.com']
 
 
 # Application definition
