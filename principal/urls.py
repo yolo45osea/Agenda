@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from django.http import HttpResponse
 
 urlpatterns = [
     #path('crear_pago', view.crear_pago, name='crear_pago'),
