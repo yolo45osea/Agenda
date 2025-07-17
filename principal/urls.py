@@ -15,7 +15,8 @@ urlpatterns = [
     path('registro_evento/', views.registro_evento, name='registro_evento'),
     path('organizador/', views.organizador, name='organizador'),
     path('cerrar_sesion', views.cerrar_sesion, name='cerrar_sesion'),
-    path('ping', views.cerrar_sesion, name='cerrar_sesion'),
+    path("ping/", lambda r: HttpResponse("pong")),
+    path('sendmail', views.sendmail, name='sendmail'),
 
 
     path('nosotros', views.nosotros, name='nosotros'),
