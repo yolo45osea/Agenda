@@ -8,7 +8,6 @@ cffi==1.17.1
 chardet==5.2.0
 charset-normalizer==3.4.2
 colorama==0.4.6
-cx_Oracle==8.3.0
 dj-database-url==2.3.0
 Django==4.2.21
 django-payments==3.0.1
@@ -37,7 +36,6 @@ psycopg2==2.9.10
 psycopg2-binary==2.9.10
 pycparser==2.22
 Pygments==2.18.0
-pykhipu==0.1.9
 pypng==0.20220715.0
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
