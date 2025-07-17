@@ -13,6 +13,7 @@ from django.core.mail import EmailMultiAlternatives
 from principal.models import Eventos
 from django.contrib.auth.models import User
 from user_agents import parse
+from django.http import HttpResponse
 
 # Create your views here.
 
